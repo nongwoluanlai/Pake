@@ -22,6 +22,10 @@ on:
       name:
         description: "App name (lowercase for Linux)"
         required: true
+      installer-language:
+        description: "zh-CN"
+        required: true
+        default: "zh-CN"
       icon:
         description: "Icon URL, auto-fetch if empty"
         required: false
