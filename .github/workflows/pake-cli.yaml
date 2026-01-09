@@ -136,7 +136,7 @@ jobs:
         timeout-minutes: 25
         shell: pwsh
         run: |
-          $args = "${{ inputs.url }}", "--name", "${{ inputs.name }}", "installer-language", "zh-CN",
+          $args = "${{ inputs.url }}", "--name", "${{ inputs.name }}", "--installer-language", "zh-CN",
 
           if ("${{ inputs.icon }}" -ne "") {
             $args += "--icon", "${{ inputs.icon }}"
