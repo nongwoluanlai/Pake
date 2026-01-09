@@ -167,7 +167,7 @@ jobs:
         if: runner.os == 'macOS'
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.name }}-macOS
+          name: out-macos
           path: ${{ inputs.name }}.dmg
           retention-days: 3
 
@@ -175,7 +175,7 @@ jobs:
         if: runner.os == 'Linux'
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.name }}-Linux-deb
+          name: out-linux-deb
           path: ${{ inputs.name }}.deb
           retention-days: 3
           if-no-files-found: ignore
@@ -184,7 +184,7 @@ jobs:
         if: runner.os == 'Linux'
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.name }}-Linux-AppImage
+          name: out-linux-appimage
           path: ${{ inputs.name }}.AppImage
           retention-days: 3
           if-no-files-found: ignore
@@ -193,7 +193,7 @@ jobs:
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.name }}-Windows
+          name: out-windows
           path: ${{ inputs.name }}.msi
           retention-days: 3
 

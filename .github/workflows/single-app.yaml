@@ -217,11 +217,18 @@ jobs:
 
           git checkout -- src-tauri/Cargo.lock
 
+      - name: Package artifacts to out.zip
+        shell: bash
+        run: |
+          cd output
+          zip -r out.zip . -q
+          ls -lh out.zip
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.title }}-${{ matrix.build }}
-          path: output/*/*.*
+          name: out-${{ matrix.build }}
+          path: output/out.zip
           retention-days: 3
 
       - name: Upload to release (Linux)
