@@ -22,10 +22,6 @@ on:
       name:
         description: "App name (lowercase for Linux)"
         required: true
-      installer-language:
-        description: "zh-CN"
-        required: true
-        default: "zh-CN"
       icon:
         description: "Icon URL, auto-fetch if empty"
         required: false
@@ -140,7 +136,7 @@ jobs:
         timeout-minutes: 25
         shell: pwsh
         run: |
-          $args = "${{ inputs.url }}", "--name", "${{ inputs.name }}"
+          $args = "${{ inputs.url }}", "--name", "${{ inputs.name }}", "installer-language", "zh-CN",
 
           if ("${{ inputs.icon }}" -ne "") {
             $args += "--icon", "${{ inputs.icon }}"
